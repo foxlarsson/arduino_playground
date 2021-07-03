@@ -1,40 +1,49 @@
-// the tutorial that helped me figure out the tmp36 stuff can be found here http://arduinolearning.com/amp/code/arduino-tmp36-example.php - and that's the code I'm using for converting the sensor readings
-
-
-const int sensorPin = 0;
-const int LED = 9;
+const int tempSensor = 0;
+const int RLED = 11;
+const int GLED = 10;
+const int BLED = 9;
 
  
 void setup()
 {
-  pinMode(LED, OUTPUT);
+  pinMode(RLED, OUTPUT);
+  pinMode(GLED, OUTPUT);
+  pinMode(BLED, OUTPUT);
   Serial.begin(9600);
-  digitalWrite(LED, LOW);
-
 }
  
 void loop()
 {
  
- int reading = analogRead(sensorPin);  
- // measure the 5v with a meter for an accurate value
- //In particular if your Arduino is USB powered
- float voltage = reading * 4.68; 
- voltage /= 1024.0; 
- 
- // now print out the temperature
- float temperatureC = (voltage - 0.5) * 100;
- Serial.print(temperatureC); 
- Serial.println(" degrees C");
+int reading = analogRead(tempSensor);  
+// measure the 5v with a meter for an accurate value
+//In particular if your Arduino is USB powered
+float voltage = reading * 4.68; 
+voltage /= 1024.0; 
 
- if(temperatureC >= 20.0)
- {
-    digitalWrite(LED, HIGH);
- }
- else
- {
-    digitalWrite(LED, LOW);
- }
+// now print out the temperature
+float temperatureC = (voltage - 0.5) * 100;
+Serial.print(temperatureC); 
+Serial.println(" degrees C");
+
+if(temperatureC >= 25.0)
+{
+  digitalWrite(RLED, HIGH);
+  digitalWrite(GLED, LOW);
+  digitalWrite(BLED, LOW);
+}
+else if(temperatureC <= 24.0)
+{
+  digitalWrite(RLED, LOW);
+  digitalWrite(GLED, LOW);
+  digitalWrite(BLED, HIGH);
+}
+else
+{
+  digitalWrite(RLED, LOW);
+  digitalWrite(GLED, HIGH);
+  digitalWrite(BLED, LOW);
+}
  
  delay(1000);
 }
