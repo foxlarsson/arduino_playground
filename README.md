@@ -1,3 +1,11 @@
+### 04.04.2021 | 001_tmp36_thermometer_with_led 
+
+**Context**: Changed the setup and code to work with tricolor LED. I chose the temperature range so that I could easily see al three colors in the room I'm currently in, so the "normal" green range is between 24 and 25 (not including either), anything equal to or lower than 24 is "too low" and blue, and equal to or over 25 is "too  hot" and red. Really happy that I finally got the project to work - and moving on to the next one, this one will involve a light sensor (and I'm excited about it). 
+
+**Image/video links:** [video of working project](https://twitter.com/foxlarssonart/status/1411434950398812163)
+
+
+
 ### 03.04.2021 | 001_tmp36_thermometer_with_led 
 
 **Context**: I'm working my way through Jeremy Blum's Exploring Arduino book and I got stuck on the thermometer project a while back, so now that I have some free time I decided to take some steps back and reassemble the project on my own, one thing at a time. The tutorial that helped me finally get decent readings from my sensors is [this one](http://arduinolearning.com/amp/code/arduino-tmp36-example.php).
@@ -12,4 +20,4 @@ Combined the stuff from shedboy71's tutorial and from an earlier chapter of the 
 
 Now planning to write my own version of the tricolor LED + temp sensor project in the book using what I've learned.
 
-**Image/video links:** [video of working project](https://twitter.com/foxlarssonart/status/1411434950398812163)
+**Image/video links:** [video of working project](https://twitter.com/foxlarssonart/status/1411453746991747072)
